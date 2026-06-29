@@ -177,11 +177,6 @@ ros2-knowledge-assistant/
 | `get_collection_stats` | Chunk count and DB path | — |
 
 ---
-
-## CV Bullet Point
-
-> Built a RAG + MCP system for ROS 2 robot documentation — ingests nav params, URDF, and launch files into ChromaDB (voyage-3 embeddings), retrieves context via cosine similarity, and generates grounded answers using Claude Sonnet. Exposed as an MCP server (compatible with Claude Desktop) and FastAPI HTTP endpoint; containerized with Docker Compose.
-
 ---
 
 ## Tech Stack
