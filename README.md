@@ -71,7 +71,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 
 cp .env.example .env
-k-ant-api03-dUu95h2VOoiuOhQe0LMtpHLb1rpIa2eWHupezF2vQCwXf7Sc_rA6KZd46KZpnbA39sa8iisQgeyyz-zl96Lf8w-hnM35gAA
+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
 
 Drop your robot docs (`.yaml`, `.md`, `.urdf`, `.py`, `.txt`) into `docs/`, then:
 
