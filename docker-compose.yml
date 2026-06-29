@@ -1,0 +1,53 @@
+version: "3.9"
+
+services:
+  # ── Step 1: Ingest docs into ChromaDB ──────────────────────────────────────
+  ingest:
+    build: .
+    command: python src/ingest.py --docs /app/docs
+    volumes:
+      - chroma_data:/app/chroma_db
+      - ./docs:/app/docs:ro
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - CHROMA_PATH=/app/chroma_db
+    profiles: ["ingest"]   # only runs with: docker compose --profile ingest up
+
+  # ── Step 2: FastAPI HTTP server ─────────────────────────────────────────────
+  api:
+    build: .
+    command: uvicorn src.api:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data:/app/chroma_db
+      - ./docs:/app/docs:ro
+      - ./src:/app/src   # live reload during dev
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - CHROMA_PATH=/app/chroma_db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # ── Step 3 (optional): MCP server via stdio ─────────────────────────────────
+  # MCP server uses stdio, so it's typically run directly, not via Docker.
+  # Use this only if wrapping in a Docker exec flow.
+  mcp:
+    build: .
+    command: python src/mcp_server.py
+    stdin_open: true
+    tty: true
+    volumes:
+      - chroma_data:/app/chroma_db
+      - ./docs:/app/docs:ro
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - CHROMA_PATH=/app/chroma_db
+    profiles: ["mcp"]
+
+volumes:
+  chroma_data:
+    driver: local

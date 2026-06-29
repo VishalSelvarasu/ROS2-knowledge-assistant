@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "ros2-knowledge-assistant": {
+      "command": "python",
+      "args": ["/absolute/path/to/ros2-knowledge-assistant/src/mcp_server.py"],
+      "env": {
+        "ANTHROPIC_API_KEY": "sk-ant-YOUR_KEY_HERE",
+        "CHROMA_PATH": "/absolute/path/to/ros2-knowledge-assistant/chroma_db"
+      }
+    }
+  }
+}
