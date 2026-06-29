@@ -1,4 +1,0 @@
-# Copy this to .env and fill in your key
-ANTHROPIC_API_KEY=sk-ant-api03-qE6...fwAA
-CHROMA_PATH=./chroma_db
-DOCS_PATH=./docs
