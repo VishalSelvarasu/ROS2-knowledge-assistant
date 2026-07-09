@@ -151,24 +151,6 @@ docker compose up api
 
 ---
 
-## Project Structure
-
-```
-ros2-knowledge-assistant/
-├── src/
-│   ├── ingest.py        # chunks docs → ChromaDB
-│   ├── rag.py           # retrieval + Claude generation
-│   ├── mcp_server.py    # MCP server (3 tools, stdio)
-│   └── api.py           # FastAPI REST interface
-├── docs/                # put your robot files here
-├── demo/                # screenshots
-├── Dockerfile
-├── docker-compose.yml
-└── requirements.txt
-```
-
----
-
 ## Stack
 
 | Layer | Tool |
