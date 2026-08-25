@@ -139,7 +139,7 @@ async def call_tool(name: str, arguments: dict) -> list[types.TextContent]:
 
 # ── Entry point ────────────────────────────────────────────────────────────────
 async def main():
-    print("🤖 ROS 2 Knowledge Assistant MCP Server starting...", flush=True)
+    import sys; sys.stderr.write("🤖 ROS 2 Knowledge Assistant MCP Server starting...\n"); sys.stderr.flush()
     async with stdio_server() as streams:
         await app.run(streams[0], streams[1], app.create_initialization_options())
 

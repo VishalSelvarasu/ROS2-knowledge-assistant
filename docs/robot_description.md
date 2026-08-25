@@ -16,7 +16,7 @@ and Gazebo Harmonic simulation.
 - Robot radius (footprint): 0.22 m
 
 ### Sensors
-- **LiDAR**: 2D laser scanner, 360° FOV, max range 3.5 m
+- **LiDAR**: 2D laser scanner, 360° FOV, max range 20.0 m
   - Topic: `/scan`
   - Frame: `base_scan`
 - **RGB Camera**: 640×480 @ 30fps
@@ -57,7 +57,7 @@ map
 - `nav2_bringup` — Navigation stack launch
 - `slam_toolbox` — Online async SLAM mapping
 - `nav2_mppi_controller` — Model Predictive Path Integral controller (local planner)
-- `nav2_navfn_planner` — A* global planner
+- `nav2_navfn_planner` — NavFn/Dijkstra global planner
 - `robot_state_publisher` — TF broadcasting from URDF
 - `visnav_yolo` — Custom YOLOv8 integration node
 
