@@ -3,7 +3,7 @@
 ## Overview
 
 VISNAV is a differential-drive mobile robot designed for autonomous indoor navigation 
-using vision-based SLAM and the ROS 2 Nav2 stack. It was developed as a portfolio 
+using LiDAR-based SLAM with vision-based object detection and the ROS 2 Nav2 stack. It was developed as a portfolio 
 project demonstrating integration of SLAM Toolbox, Nav2, YOLOv8 object detection, 
 and Gazebo Harmonic simulation.
 
