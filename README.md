@@ -26,14 +26,12 @@ Queried via MCP Inspector — answer pulls from both `nav2_params.yaml` and `rob
 ![Lidar flow overview](demo/Lidar1.png)
 ![Lidar SLAM and costmap stages](demo/Lidar2.png)
 ![Lidar path planning stage](demo/Lidar3.png)
-![Lidar full response with sources](demo/Lidar4.png)
 
 ### Safety Monitor Analysis
 Scenario-based reasoning about safety thresholds and velocity override behavior:
 
 ![Safety monitor query](demo/Safety_monitor1.png)
 ![Safety monitor trigger analysis](demo/Safety_monitor2.png)
-![Safety monitor boundary diagram](demo/Safety_monitor3.png)
 
 ---
 
@@ -72,6 +70,8 @@ pip install -r requirements.txt
 
 cp .env.example .env
 # Add your ANTHROPIC_API_KEY to .env
+
+```
 
 Drop your robot docs (`.yaml`, `.md`, `.urdf`, `.py`, `.txt`) into `docs/`, then:
 
